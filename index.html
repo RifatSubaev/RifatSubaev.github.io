@@ -501,19 +501,17 @@
 			  </div>
 			</div>
 		</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  
-    <script src="slick/slick.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     
-    <script>
-    	var scene = $('#scene').get(0);
-		var parallaxInstance = new Parallax(scene, { 
- 		lativeInput :  true 
-});
-    </script>
+    <script src="js/bootstrap.min.js"></script>
+  	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+   <script>
+    $(document).ready(function(){
+      $('.display-six__carousel').slick({
+        
+      });
+    });
+  </script>
 		<script>
     $(document).ready(function(){
       $('.display-six__carousel').slick({
@@ -546,6 +544,14 @@
     <script>
     	new WOW().init();
     </script>
-		 
+		  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    
+    <script>
+    	var scene = $('#scene').get(0);
+		var parallaxInstance = new Parallax(scene, { 
+ 		lativeInput :  true 
+});
+    </script>
   </body>
 </html>
