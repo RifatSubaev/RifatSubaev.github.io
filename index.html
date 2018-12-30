@@ -14,12 +14,12 @@
   <body>
   	
 		<div  class="display-one">
-			<div data-relative-input="true" id="scene">
+			<div data-relative-input="true" id="scene" class="scene">
   		<div data-depth="0.2"><img class="par par_1" src="img/par_1.png" alt=""></div>
 			<div data-depth="0.7"><img class="par par_2" src="img/par_2.png" alt=""></div>
 			<div data-depth="0.3"><img class="par par_3" src="img/par_3.png" alt=""></div>
 			<div data-depth="0.4"><img class="par par_4" src="img/par_4.png" alt=""></div>
-  	</div>
+  		</div>
   		<div class="container">
 			    <div class="row">
 			    	<div class="header">
@@ -42,7 +42,7 @@
 			  </div>
 			  <div class="row">
 			   	<div class="col-md-6 col-md-offset-3 main__btn wow animated fadeInUp">
-			   		<a href="#" class="main__btn-link ">Заказать услуги</a>
+			   		<a href="#form-ajax" class="main__btn-link ">Заказать услуги</a>
 			   	</div>
 			  </div>
 			  <div class="row">
@@ -97,10 +97,10 @@
   			<div class="row">
   				<p class="col-md-12 form__headline">Заказать выписку из роддома</p>
 					<p class="col-md-12 form__text">Заполните форму и мы организуем выписку из роддома <br>полностью за Вас!</p>
-					<form action="#" class="col-md-12">
-						<input type="text" class="form__name" placeholder="Имя">
-						<input type="text" class="form__telephone" placeholder="Телефон">
-						<button type="button" class="form__btn">отправить</button>
+					<form action="#" id="form-ajax" class="col-md-12">
+						<input type="text" class="form__name" placeholder="Имя" name="user_name">
+						<input type="text" class="form__telephone" placeholder="Телефон" name="telephone">
+						<button type="submit" class="form__btn">отправить</button>
 					</form>
   			</div>
   		</div>
@@ -350,10 +350,10 @@
   			<div class="row">
   				<p class="col-md-12 form__headline">Вы запомните этот день на всю жизнь! Доверьтесь нам!</p>
 					<p class="col-md-12 form__text">Заполни заявку и мы расскажем, как сделать встречу любимой жены<br>и ребенка незабываемой!</p>
-					<form action="#" class="col-md-12">
-						<input type="text" class="form__name" placeholder="Имя">
-						<input type="text" class="form__telephone" placeholder="Телефон">
-						<button type="button" class="form__btn">ЗАКАЗАТЬ ЗВОНОК</button>
+					<form action="#" id="form-ajax" class="col-md-12">
+						<input type="text" class="form__name" placeholder="Имя" name="user_name">
+						<input type="text" class="form__telephone" placeholder="Телефон" name="telephone">
+						<button type="submit" class="form__btn">ЗАКАЗАТЬ ЗВОНОК</button>
 					</form>
   			</div>
   		</div>
@@ -425,10 +425,10 @@
   			<div class="row">
   				<p class="col-md-12 form__headline">Вам не нужно договариваться за оператора, фотографа, кондитера - <br>Мы сделаем это за Вас!</p>
 					<p class="col-md-12 form__text">Заполни заявку и мы расскажем, как сделать встречу любимой жены<br>и ребенка незабываемой!</p>
-					<form action="#" class="col-md-12">
-						<input type="text" class="form__name" placeholder="Имя">
-						<input type="text" class="form__telephone" placeholder="Телефон">
-						<button type="button" class="form__btn">ЗАКАЗАТЬ ЗВОНОК</button>
+					<form  class="col-md-12" action="#" id="form-ajax">
+						<input type="text" class="form__name" placeholder="Имя" name="user_name">
+						<input type="text" class="form__telephone" placeholder="Телефон" name="telephone">
+						<button type="submit" class="form__btn">ЗАКАЗАТЬ ЗВОНОК</button>
 					</form>
   			</div>
   		</div>
@@ -476,10 +476,10 @@
   			<div class="row">
   				<p class="col-md-12 form__headline">У вас остались вопросы?</p>
 					<p class="col-md-12 form__text">Заполни заявку и мы расскажем, как сделать встречу любимой жены<br>и ребенка незабываемой!</p>
-					<form action="#" class="col-md-12">
-						<input type="text" class="form__name" placeholder="Имя">
-						<input type="text" class="form__telephone" placeholder="Телефон">
-						<button type="button" class="form__btn">ЗАКАЗАТЬ ЗВОНОК</button>
+					<form id="form-ajax" action="#" class="col-md-12">
+						<input type="text" class="form__name" placeholder="Имя" name="user_name">
+						<input type="text" class="form__telephone" placeholder="Телефон" name="telephone">
+						<button type="submit" class="form__btn">ЗАКАЗАТЬ ЗВОНОК</button>
 					</form>
   			</div>
   		</div>
@@ -552,6 +552,22 @@
 		var parallaxInstance = new Parallax(scene, { 
  		lativeInput :  true 
 });
+    </script>
+    <script>
+    	$(document).ready(function (){
+    		$("#form-ajax").submit(function() {
+    			$.ajax({
+    				type: "POST",
+    				url: "mail.php",
+    				data: $(this).serialize()
+    			}).done(function() {
+    				$(this).find("input").val("");
+    				alert("Спасибо за заявку!!!");
+    				$("#form-ajax").trigger("reset");
+    			});
+    			return: false;
+    		});
+    	});
     </script>
   </body>
 </html>

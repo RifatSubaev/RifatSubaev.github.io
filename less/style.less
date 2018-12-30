@@ -64,6 +64,10 @@
   font-weight: bold;
   font-style: normal;
 }
+html{
+  width: 100vw;
+  overflow-x: hidden;
+}
 body{
   box-sizing: border-box;
   margin: 0;
@@ -76,6 +80,7 @@ body{
   width: 100vw;
   height: 800px;
   background: url('../img/display_one-bg.jpg') center center no-repeat;
+  overflow-x: hidden;
 }
 .par {
 
@@ -106,6 +111,7 @@ a:hover{
   text-decoration: none;
 }
 .header{
+  overflow-x: hidden;
   margin-top: 31px;
   &__logo{
     width: 213px;
@@ -153,6 +159,7 @@ a:hover{
   }
 }
 .main{
+  overflow-x: hidden;
   text-align: center;
   margin-top: 90px;
   color: #ffffff;
@@ -204,6 +211,7 @@ a:hover{
   margin-top: 50px;
 }
 .display-two__img{
+  overflow-x: hidden;
   width: 100vw;
   height: 320px;
   background:  url(../img/display-2-foto.jpg) center center no-repeat;
@@ -218,6 +226,7 @@ a:hover{
   margin-bottom: 88px;
 }
 .form{
+  overflow-x: hidden;
   margin-bottom: 80px;
   text-align: center;
   &__headline{
@@ -281,6 +290,7 @@ a:hover{
   }
 }
 .display-three{
+  overflow-x: hidden;
   width: 100vw;
   height: 640px;
   background:  url(../img/display-3__bg.png) center center no-repeat;
@@ -788,6 +798,9 @@ a:hover{
 
 }
 @media (max-width: 1250px){
+.scene{
+  display: none;
+}
   .display-three__items-img{
   width: 40px;
 }
