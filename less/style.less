@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'MuseoSansCyrl-500';
     src: url('../fonts/MuseoSansCyrl-500.eot');
@@ -64,9 +65,13 @@
   font-weight: bold;
   font-style: normal;
 }
+.scene{
+  overflow-x: hidden;
+}
 html{
   width: 100vw;
-  overflow-x: hidden;
+  height: 100%;
+  overflow: hidden;
 }
 body{
   box-sizing: border-box;
@@ -83,7 +88,7 @@ body{
   overflow-x: hidden;
 }
 .par {
-
+  display: block;
   z-index: 99;
   position: absolute;
 }
@@ -698,7 +703,11 @@ a:hover{
 
 
 
-
+@media(max-width: 1366px){
+  .par{
+    display: none;
+  }
+}
 @media (max-width: 1400px){
 .header{
   margin-top: 20px;
